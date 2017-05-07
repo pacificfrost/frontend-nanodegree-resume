@@ -58,6 +58,9 @@ var HTMLonlineURL = '<br><a href="#" >%data%</a>';
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
+// Map
+$('#mapDiv').append(googleMap);
+
 /*
  The Internationalize Names challenge found in the lesson Flow Control from JavaScript Basics requires you to create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
  */
@@ -84,10 +87,6 @@ function logClicks(x, y) {
     );
     console.log('x location: ' + x + '; y location: ' + y);
 }
-
-$(document).click(function (loc) {
-    console.log(loc.pageX + " " + loc.pageY);
-});
 
 
 /*
@@ -117,7 +116,7 @@ function initializeMap() {
 
 
     /*
-     locationFinder() returns an array of every location string from the JSONs
+     locationFinder() returns an array dof every location string from the JSONs
      written for bio, education, and work.
      */
     function locationFinder() {
@@ -238,7 +237,7 @@ function initializeMap() {
  */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds

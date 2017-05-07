@@ -106,18 +106,15 @@ var projects = {
             ]
         }
     ]
-}
+};
 
 // International Name
-
-function internationalName() {
+function inName() {
     var nameArray = bio.name.split(' ');
     nameArray[nameArray.length - 1] = nameArray[nameArray.length - 1].toUpperCase();
     bio.name = nameArray.join(' ');
     return bio.name;
 }
-
-bio.name = internationalName(bio.name);
 
 // Object Methods
 projects.display = function () {
@@ -194,10 +191,7 @@ work.jobs.forEach(function (jobs) {
     $('.work-entry:last').append(description);
 });
 
-// Map
-$('#mapDiv').append(googleMap);
-
-
 // Functions Load
 bio.display();
 projects.display();
+$('#header').append(internationalizeButton);
